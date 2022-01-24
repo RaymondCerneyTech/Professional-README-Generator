@@ -1,16 +1,3 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
 	tableOfContents = [];
 	tableOfContents.push("[Description](#description)");
@@ -33,14 +20,14 @@ function generateMarkdown(data) {
 		tableOfContents.push("[Questions](#questions)");
 	}
 
-	// Add Title, Description, and TOC header to content
+	// Add Title, Description, and TOC header
 	content = `
 # ${data.title}
 `;
 
 	if (data.confirmLicense) {
 		content += `
-![Licence Badge](https://img.shields.io/static/v1?label=License&message=${data.license.replace(/ /g, "%20")}&color=blue)
+![License Badge](https://img.shields.io/static/v1?label=License&message=${data.license.replace(/ /g, "%20")}&color=blue)
 `;
 	} else {
 		return "";
@@ -52,7 +39,7 @@ ${data.description}
 ## Table of Contents
 `;
 
-	// Add Table Of Contents
+	// Table Of Contents
 	tableOfContents.forEach((item) => {
 		content += `- ${item}
 `;
@@ -80,7 +67,7 @@ ${data.usage}
 	if (data.confirmContribution) {
 		content += `
     
-## Contributing
+## Contribution
 ${data.contribution}
 `;
 	}
@@ -99,7 +86,7 @@ ${data.tests}
 		content += `
     
 ## License
-This code is covered under ${data.license}
+This code is covered under the${data.license}
 `;
 	}
 

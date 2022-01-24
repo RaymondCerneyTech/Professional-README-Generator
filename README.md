@@ -1,6 +1,9 @@
-#
+# Node Readme Generator
 
 ## Instructions:
+Clone this repository
+Open VS Code
+Navigate to cloned repository
 
 ## Details:
 
