@@ -1,25 +1,14 @@
 # Node Readme Generator
+Used to generate a high-quality readme using node!
 
-## Instructions:
-Clone this repository
-Open VS Code
-Navigate to cloned repository
-
-## Details:
+## Installation
+Clone, NPM Install, Type 'node index.js', follow prompts, locate in 'dist' folder
 
 ## Tools Used:
 
 - VSCode
 - JavaScript
-- Node.JS
-
-## Website:
-
-https://raymondcerneytech.github.io/ /
-
-### Preview:
-
-![Picture of _____________](./assets/images/ .PNG)
+- Node.J
 
 ### Author:
 
