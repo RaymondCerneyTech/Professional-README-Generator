@@ -8,20 +8,14 @@ Type: node index.js
 Follow prompts
 
 ## Details:
+Used to easily generate a professional-looking README
 
 ## Tools Used:
 
 - VSCode
 - JavaScript
 - Node.JS
-
-## Website:
-
-https://raymondcerneytech.github.io/ /
-
-### Preview:
-
-![Picture of _____________](./assets/images/ .PNG)
+ -Inquirer
 
 ### Author:
 
