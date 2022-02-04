@@ -2,8 +2,10 @@
 
 ## Instructions:
 Clone this repository
-Open VS Code
 Navigate to cloned repository
+Type: npm install
+Type: node index.js
+Follow prompts
 
 ## Details:
 

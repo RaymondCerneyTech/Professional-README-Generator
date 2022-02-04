@@ -7,100 +7,80 @@ function generateMarkdown(data) {
 	if (data.confirmUsage) {
 		tableOfContents.push("[Usage](#usage)");
 	}
+	if (data.confirmLicense) {
+		tableOfContents.push("[License](#license)");
+	}
 	if (data.confirmContribution) {
-		tableOfContents.push("[Contributing](#contributing)");
+		tableOfContents.push("[Contribution](#contribution)");
 	}
 	if (data.confirmTests) {
 		tableOfContents.push("[Tests](#tests)");
 	}
-	if (data.confirmLicense) {
-		tableOfContents.push("[License](#license)");
-	}
 	if (data.confirmContact) {
-		tableOfContents.push("[Questions](#questions)");
+		tableOfContents.push("[Contact](#contact)");
 	}
 
-	// Add Title, Description, and TOC header
-	content = `
-# ${data.title}
-`;
-
-	if (data.confirmLicense) {
-		content += `
-![License Badge](https://img.shields.io/static/v1?label=License&message=${data.license.replace(/ /g, "%20")}&color=blue)
-`;
-	} else {
-		return "";
-	}
-
-	content += `
-## Description
+//Title
+	content = `# ${data.title}`;
+//Description
+	content += `## Description
 ${data.description}
-## Table of Contents
-`;
-
-	// Table Of Contents
+## Table of Contents`;
+//Table of Contents
 	tableOfContents.forEach((item) => {
-		content += `- ${item}
-`;
+		content += `- ${item}`;
 	});
-
-	// Optionals:
-
-	// Install instructions
+//Install
 	if (data.confirmInstall) {
-		content += `
-## Installation
-${data.install}
-`;
+		content += `## Installation
+${data.install}`;
 	}
-
-	// Manual
+//Usage
 	if (data.confirmUsage) {
-		content += `
-## Usage
-${data.usage}
-`;
+		content += `## Usage
+	${data.usage}`;
 	}
 
-	// Contributors
+	// Contribution
 	if (data.confirmContribution) {
-		content += `
-    
-## Contribution
-${data.contribution}
-`;
+		content += `## Contribution
+	${data.contribution}`;
 	}
 
-	// Testing
+	// Tests
 	if (data.confirmTests) {
-		content += `
-    
-## Tests
-${data.tests}
-`;
+		content += `## Tests 
+		${data.tests}`;
 	}
-
-	// Licensing
+//License
 	if (data.confirmLicense) {
-		content += `
-    
-## License
-This code is covered under the${data.license}
-`;
+		content += `## License
+		This code is covered under the `;
+		if (data.license == "MIT") {
+			content += `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`;
+			content += `(https://opensource.org/licenses/MIT)`;
+		}
+		else if (data.license == "Apache 2.0") {
+			content += `![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`;
+			content += `(https://opensource.org/licenses/Apache-2.0)`;
+		}
+		else if (data.license == "GNU GPL v3") {
+			content += `![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)`;
+			content += `(https://www.gnu.org/licenses/gpl-3.0)`;
+		}
+		else if (data.license == "Mozilla Public License 2.0") {
+			content += `![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)`;
+			content += `(https://opensource.org/licenses/MPL-2.0)`;
+		}
 	}
 
-	// Questions
+//Username and Email	
 	if (data.confirmContact) {
-		content += `
-    
-## Questions
+		content += `## Contact
 - My [GitHub](https://github.com/${data.githubUsername})
-- My [Email](mailto:${data.email})
-`;
+- My [Email](mailto:${data.email})`;
 	}
-
 	return content;
-} // End Function
+}
 
-module.exports = generateMarkdown;
+	module.exports = { generateMarkdown };

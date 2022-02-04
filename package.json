@@ -9,9 +9,8 @@
   "author": "Raymond Cerney",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "8.2.0"
+    "inquirer": "^8.2.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RaymondCerneyTech/Professional-README-Generator.git"
